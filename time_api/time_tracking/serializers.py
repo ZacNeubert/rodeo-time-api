@@ -15,7 +15,7 @@ class ProjectSerializer(serializers.ModelSerializer):
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ('name', 'description', 'updated', 'created')
+        fields = ('name', 'description', 'updated', 'created', 'project')
         depth = 1
 
 
