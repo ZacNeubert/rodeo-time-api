@@ -6,4 +6,4 @@ api_router = routers.SimpleRouter()
 api_router.register(r'projects', ProjectViewSet)
 api_router.register(r'entries', EntryViewSet)
 api_router.register(r'tasks', TaskViewSet)
-
+api_router.register(r'profile', ProfileViewSet)

@@ -23,3 +23,8 @@ class EntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Entry
         fields = ('user', 'task', 'hours', 'minutes', 'seconds', 'updated', 'created', 'time_in', 'time_out')
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ('profile_type')
