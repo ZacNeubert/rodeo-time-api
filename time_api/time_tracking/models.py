@@ -14,8 +14,8 @@ class Project(models.Model):
         return self.name
 
 class Task(models.Model):
-    manager = models.ForeignKey(Project)
     name = models.CharField(max_length=255)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     description = models.TextField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
