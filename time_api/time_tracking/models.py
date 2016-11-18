@@ -26,7 +26,8 @@ class Task(models.Model):
 
 class Entry(models.Model):
     user = models.ForeignKey(User, related_name='time_entries')
-    project = models.ForeignKey(Project, related_name='entries')
+    task = models.ForeignKey(Task, null=True)
+    notes = models.TextField(null=True, blank=True)
     hours = models.IntegerField()
     minutes = models.IntegerField()
     seconds = models.IntegerField()

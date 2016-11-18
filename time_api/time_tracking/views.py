@@ -8,7 +8,7 @@ from .models import Entry, Project
 def entry_list(request):
     all_entries = Entry.objects.all()
 
-    return render(request, 'entries/entry_list.html', {'entries': all_entries})
+    return render(request, 'time_tracking/entry_list.html', {'time_tracking': all_entries})
 
 
 class ProjectList(ListView):
