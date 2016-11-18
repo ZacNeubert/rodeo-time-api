@@ -3,7 +3,7 @@ from profile import Profile
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-from .models import Project, Entry, Task
+from .models import Project, Entry, Task, Profile
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -27,4 +27,4 @@ class EntrySerializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ('profile_type')
+        fields = '__all__'

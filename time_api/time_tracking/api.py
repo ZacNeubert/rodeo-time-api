@@ -2,8 +2,8 @@ from profile import Profile
 
 from rest_framework import viewsets
 
-from .models import Project, Entry, Task
-from .serializers import ProjectSerializer, EntrySerializer, TaskSerializer
+from .models import Project, Entry, Task, Profile
+from .serializers import ProjectSerializer, EntrySerializer, TaskSerializer, ProfileSerializer
 
 
 class ProjectViewSet(viewsets.ModelViewSet):

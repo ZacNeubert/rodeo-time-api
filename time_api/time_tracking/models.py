@@ -21,7 +21,6 @@ class Task(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     description = models.TextField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
-    other = models.TextField(null=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
