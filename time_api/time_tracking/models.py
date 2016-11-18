@@ -15,15 +15,18 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+
 class Task(models.Model):
     name = models.CharField(max_length=255)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     description = models.TextField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
+    other = models.TextField(null=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+
 
 class Profile(models.Model):
     PROFILE_TYPES = (
@@ -53,6 +56,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return str(self.user)
+
 
 class Entry(models.Model):
     user = models.ForeignKey(User, related_name='time_entries')

@@ -3,7 +3,7 @@ from profile import Profile
 from rest_framework import viewsets
 
 from .models import Project, Entry, Task
-from .serializers import ProjectSerializer, EntrySerializer, TaskSerializer, UserSerializer
+from .serializers import ProjectSerializer, EntrySerializer, TaskSerializer
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -21,6 +21,3 @@ class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = Profile.objects.all()
-    serializer_class = UserSerializer

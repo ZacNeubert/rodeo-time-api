@@ -6,12 +6,6 @@ from django.contrib.auth.models import User
 from .models import Project, Entry, Task
 
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        exclude = ('password', 'is_staff', 'is_superuser')
-
-
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project

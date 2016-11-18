@@ -1,0 +1,12 @@
+{% extends 'entries/base.html' %}
+
+{% block content %}
+  <h1>Entries</h1>
+  {% for entry in entries %}
+    <p>
+      <strong>Project: </strong> {{ entry.project.name }} <br/>
+      <strong>User: </strong> {{ entry.user.first_name }} <br/>
+      <strong>Time: </strong> {{ entry.hours }}:{{ entry.minutes }}
+    </p>
+  {% endfor %}
+{% endblock %}
