@@ -1,0 +1,17 @@
+version: '2'
+services:
+    db:
+        image: postgres
+        volumes:
+            - dbdata:/var/lib/postgresql/data
+    time-api:
+        build: .
+        volumes:
+            - .:/code
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db
+
+volumes:
+    dbdata:
