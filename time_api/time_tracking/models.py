@@ -13,6 +13,16 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+class Task(models.Model):
+    manager = models.ForeignKey(Project)
+    name = models.CharField(max_length=255)
+    description = models.TextField(null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
 
 class Entry(models.Model):
     user = models.ForeignKey(User, related_name='time_entries')
@@ -22,6 +32,9 @@ class Entry(models.Model):
     seconds = models.IntegerField()
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
+
+    time_in = models.DateTimeField()
+    time_out = models.DateTimeField()
 
     def __str__(self):
         return '{} - {}:{}'.format(self.user, self.hours, self.minutes)
